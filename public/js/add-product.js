@@ -103,7 +103,6 @@ const postProductData = () =>{
 
 const fetchProductData = () => {
     addProductBtn.innerHTML = 'save product';
-
     fetch(`http://localhost:5000/items/${productId}`, {
         method: 'GET',
         headers: new Headers({'Content-Type':'application/json'}),

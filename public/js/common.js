@@ -22,7 +22,7 @@
     .then(res => res.json())
     .then(data => processData(data));
 }*/
-const sendData = (path, data) => {
+const sendData = (path, data, method) => {
     const formData = new FormData();
 
     // Append each field to the FormData object
@@ -31,18 +31,20 @@ const sendData = (path, data) => {
     }
     //for (const [key, value] of formData.entries()) { alert(`${key}: ${value}`); }
     fetch(path, {
-        method: 'post',
+        method: method,
         headers: new Headers({
             'Authorization': `Bearer ${sessionStorage.token}`,
         }),
         body: formData,
     })
     .then(res => {
+        alert(method);
         alert('Response:', res);
         return res.json();
     })
-    .then(data => processData(data))
-    .catch(error => alert('Error: ' + error.message));
+    .then(data => processData(data));
+
+
 }
 
 

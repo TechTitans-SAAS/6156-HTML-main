@@ -9,7 +9,7 @@ window.onload = () => {
         document.getElementById('newAddress').value = user.address || '';
         document.getElementById('newZipCode').value = user.zip_code || '';
         document.getElementById('newState').value = user.state || '';
-        document.getElementById('newCountry').value = user.country || '';
+        document.getElementById('newCity').value = user.city || '';
         document.getElementById('newDescription').value = user.description || '';
         }
     }
@@ -26,7 +26,7 @@ formBtn.addEventListener('click', () =>{
     let Address = document.querySelector('#newAddress')|| null;
     let ZipCode = document.querySelector('#newZipCode')|| null;
     let State = document.querySelector('#newState')|| null;
-    let Country = document.querySelector('#newCountry')|| null;
+    let City = document.querySelector('#newCity')|| null;
     let Description = document.querySelector('#newDescription')|| null;
     if(fullname != null){ //signup page
             // form validation
@@ -56,13 +56,13 @@ formBtn.addEventListener('click', () =>{
                 address: Address.value,
                 zip_code: ZipCode.value,
                 state: State.value,
-                country: Country.value,
-                description: Description.value})
+                city: City.value,
+                description: Description.value},'put')
         }
     }
 })
 
-function startGoogleSignIn() {
+/*function startGoogleSignIn() {
     gapi.load('auth2', function () {
         gapi.auth2.init({
             client_id: 'YOUR_CLIENT_ID',
@@ -90,11 +90,9 @@ function onGoogleSignIn(googleUser) {
 
 function editAccount() {
     let fullname = document.querySelector('#newName') || null;
-    let password = document.querySelector('#newPassword') || null;
     let Address = document.querySelector('#newAddress') || null;
     let ZipCode = document.querySelector('#newZipCode') || null;
     let State = document.querySelector('#newState') || null;
-    let Country = document.querySelector('#newCountry') || null;
     let Description = document.querySelector('#newDescription') || null;
 
     if (fullname != null) {
@@ -110,16 +108,14 @@ function editAccount() {
             sendData(`https://user-microservice-402518.ue.r.appspot.com/users/profile/${userId}`, {
                 name: fullname.value,
                 email: user.email,
-                password: password.value,
                 address: Address.value,
                 zipCode: ZipCode.value,
                 state: State.value,
-                country: Country.value,
                 description: Description.value
             });
         }
     }
-}
+}*/
 
 // Rest of your code...
 

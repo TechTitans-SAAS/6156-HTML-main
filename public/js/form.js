@@ -67,7 +67,7 @@ formBtn.addEventListener('click', () =>{
             sendData('/signup', {
                 name: fullname.value,
                 email: email.value,
-                password: password.value})
+                password: password.value}, 'post')
         }
     } else{ //login page
         if(!email.value.length || !password.value.length){
@@ -77,7 +77,7 @@ formBtn.addEventListener('click', () =>{
             loader.style.display = 'block';
             sendData('https://user-microservice-402518.ue.r.appspot.com/users/sign_in', {
                 email: email.value,
-                password: password.value})
+                password: password.value}, 'post')
             //console.log('Success:');
         }
     }

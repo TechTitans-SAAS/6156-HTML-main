@@ -78,7 +78,7 @@ addProductBtn.addEventListener('click',()=>{
         if(productId){
             data.id = productId;
         }
-        sendData('/add-product', data);
+        sendData('/add-product', data, 'post');
     }
 })
 

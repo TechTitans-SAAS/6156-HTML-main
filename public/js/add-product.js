@@ -1,5 +1,6 @@
 //let user = JSON.parse(sessionStorage.user || null);
 let productOwner;
+
 window.onload = () => {
     let user = JSON.parse(sessionStorage.user || null);
     if(user == null){

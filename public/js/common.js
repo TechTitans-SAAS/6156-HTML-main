@@ -31,7 +31,7 @@ const sendData = (path, data) => {
     }
     //for (const [key, value] of formData.entries()) { alert(`${key}: ${value}`); }
     fetch(path, {
-        method: 'put',
+        method: 'post',
         headers: new Headers({
             'Authorization': `Bearer ${sessionStorage.token}`,
         }),
